@@ -16,11 +16,12 @@ public class Menu {
         System.out.println("02. Cadastrar Candidato");
         System.out.println("03. Cadastrar Votação");
         System.out.println("04. Atualizar Votação");
-        System.out.println("05. Gravar Dados");
+        System.out.println("05. Mostrar Resultados");
+        System.out.println("06. Gravar Dados");
         System.out.println("00. Finalizar");
         System.out.print("Opção: ");
         this.opcao = sc.nextInt();
-        System.out.println("--------------");
+        System.out.println("\n--------------\n");
     }
 
 }

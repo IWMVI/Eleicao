@@ -3,7 +3,6 @@ package view;
 import java.util.Scanner;
 
 import controller.Funcoes;
-import entities.Candidatos;
 
 public class Principal {
     public static void main(String[] args) {

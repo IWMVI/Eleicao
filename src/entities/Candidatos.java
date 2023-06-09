@@ -4,7 +4,8 @@ public class Candidatos {
 
     private String nome;
     private int numero;
-    private int cont;
+    private int voto;
+    private int nulos;
 
     public Candidatos() {
 
@@ -23,11 +24,19 @@ public class Candidatos {
         return numero;
     }
 
-    public void setVoto() {
-
+    public void setVotos() {
+        voto++;
     }
 
     public int getVotos() {
-        return cont;
+        return voto;
+    }
+
+    public void setNulos(int nulos) {
+        this.nulos = nulos;
+    }
+
+    public int getNulos() {
+        return nulos;
     }
 }
