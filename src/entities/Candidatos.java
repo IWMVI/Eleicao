@@ -15,6 +15,14 @@ public class Candidatos {
         this.numero = numero;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public int getPartido() {
+        return numero;
+    }
+
     public void setVoto() {
 
     }
