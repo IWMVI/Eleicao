@@ -11,7 +11,7 @@ public class Funcoes {
     Scanner sc = new Scanner(System.in);
     Eleitores[] eleitores = new Eleitores[5];
     Eleitores[] eleitor = eleitores;
-    Candidatos[] candidatos = new Candidatos[2];
+    Candidatos[] candidatos = new Candidatos[3];
     Candidatos[] candidato = candidatos;
 
     public void showFuncoes(int opcao) {
@@ -47,6 +47,10 @@ public class Funcoes {
             case 2:
                 System.out.println("---- Cadastro Candidato ----\n");
                 for (int i = 0; i < candidatos.length; i++) {
+                    if (i == candidatos.length - 1) {
+                        candidatos[i] = new Candidatos("Nulo", 00);
+                        break;
+                    }
                     System.out.print("Informe o nome do candidato: ");
                     String nome = sc.nextLine();
 
@@ -80,45 +84,34 @@ public class Funcoes {
                 break;
 
             case 4:
-                int votosNulos = 0;
-                for (Eleitores eleitores : eleitor) {
-                    int voto = eleitores.getVoto();
-                    boolean votoEncontrado = false;
-                    for (Candidatos candidatos : candidato) {
-                        if (voto == candidatos.getPartido()) {
-                            candidatos.setVotos();
-                            votoEncontrado = true;
-                            break;
+                System.out.println("---- Atualizar Votação ----\n");
+
+                Candidatos nulo = new Candidatos();
+                for (int i = 0; i < eleitores.length; i++) {
+                    for (int j = 0; j < candidatos.length; j++) {
+                        if (candidato[j].getPartido() == eleitores[i].getVoto()) {
+                            candidato[j].setVotos();
                         }
                     }
-                    if (!votoEncontrado) {
-                        votosNulos++;
-                    }
                 }
 
-                for (Candidatos candidatos : candidato) {
-                    candidatos.setNulos(votosNulos);
-                }
-
+                System.out.println("Votação atualizada!\n");
+                System.out.println("--------------\n");
                 break;
 
             case 5:
                 System.out.println("---- Resultados ----\n");
                 for (Candidatos candidatos : candidato) {
+                    if (candidatos.getPartido() == 00) {
+                        System.out.println("Votos Nulos: " + candidatos.getVotos());
+                        break;
+                    }
                     System.out.println("Nome: " + candidatos.getNome());
                     System.out.println("Partido: " + candidatos.getPartido());
                     System.out.println("Votos: " + candidatos.getVotos());
                     System.out.println();
                 }
-
-                int nulos = 0;
-                for (Candidatos candidatos : candidato) {
-                    if (candidatos.getNulos() != 0) {
-                        nulos++;
-                    }
-                }
-
-                System.out.println("Votos Nulos: " + nulos);
+                
                 System.out.println("\n--------------\n");
                 break;
         }
@@ -131,6 +124,5 @@ public class Funcoes {
             System.out.println(candidatos.getPartido() + " - " + candidatos.getNome());
             System.out.println();
         }
-        System.out.println("00 - Nulo");
     }
 }

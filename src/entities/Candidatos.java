@@ -32,8 +32,8 @@ public class Candidatos {
         return voto;
     }
 
-    public void setNulos(int nulos) {
-        this.nulos = nulos;
+    public void setNulos() {
+        nulos++;
     }
 
     public int getNulos() {
