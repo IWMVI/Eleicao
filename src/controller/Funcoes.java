@@ -1,5 +1,8 @@
 package controller;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,7 +17,7 @@ public class Funcoes {
     Candidatos[] candidatos = new Candidatos[3];
     Candidatos[] candidato = candidatos;
 
-    public void showFuncoes(int opcao) {
+    public void showFuncoes(int opcao) throws IOException {
         switch (opcao) {
 
             default:
@@ -111,7 +114,46 @@ public class Funcoes {
                     System.out.println("Votos: " + candidatos.getVotos());
                     System.out.println();
                 }
-                
+
+                System.out.println("\n--------------\n");
+                break;
+
+            case 6:
+                System.out.println("---- Gravar Dados ----\n");
+                System.out.print("Informe o nome do arquivo: ");
+                sc.nextLine();
+                String nomeArquivo = sc.nextLine();
+
+                String arquivo = nomeArquivo + ".txt";
+
+                try (BufferedWriter escrita = new BufferedWriter(new FileWriter(arquivo))) {
+                    escrita.write("---- Eleitores ----\n");
+                    escrita.newLine();
+                    for (Eleitores eleitor : eleitores) {
+                        escrita.write("Eleitor: " + eleitor.getNome() + "\n");
+                        escrita.write("Seção: " + eleitor.getSecao() + "\n");
+                        escrita.write("Voto: " + eleitor.getVoto() + "\n");
+                        escrita.newLine();
+                    }
+                    escrita.write("---- Candidatos ----\n");
+                    escrita.newLine();
+                    for (Candidatos candidato : candidatos) {
+                        if (candidato.getPartido() == 00) {
+                            escrita.write("Votos Nulos: " + candidato.getVotos());
+                            break;
+                        }
+
+                        escrita.write("Nome: " + candidato.getNome() + "\n");
+                        escrita.write("Partido: " + candidato.getPartido() + "\n");
+                        escrita.write("Votos: " + candidato.getVotos() + "\n");
+                        escrita.newLine();
+                    }
+
+                    System.out.println("Dados gravados com sucesso!\n");
+                } catch (IOException e) {
+                    System.out.println("Erro ao gravar arquivos!");
+                }
+
                 System.out.println("\n--------------\n");
                 break;
         }

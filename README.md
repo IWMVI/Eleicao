@@ -6,7 +6,7 @@ Este é um projeto de um sistema de votação simples, desenvolvido em Java. O s
 
 O sistema oferece as seguintes funcionalidades:
 
-1. Cadastro de Eleitor: Permite cadastrar o nome de um eleitor e gera automaticamente uma seção para o eleitor.
+1. Cadastro de Eleitor: Permite cadastrar o nome de um eleitor e gerar automaticamente uma seção para o eleitor.
 
 2. Cadastro de Candidato: Permite cadastrar o nome de um candidato e informar o número do partido ao qual o candidato pertence.
 

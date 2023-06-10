@@ -1,0 +1,33 @@
+---- Eleitores ----
+
+Eleitor: Wallace
+Seção: 15
+Voto: 12
+
+Eleitor: Anna
+Seção: 14
+Voto: 12
+
+Eleitor: Maria
+Seção: 18
+Voto: 12
+
+Eleitor: Pedro
+Seção: 18
+Voto: 11
+
+Eleitor: Luiz
+Seção: 12
+Voto: 0
+
+---- Candidatos ----
+
+Nome: Nelson
+Partido: 12
+Votos: 3
+
+Nome: Lucas
+Partido: 11
+Votos: 1
+
+Votos Nulos: 1
