@@ -57,9 +57,14 @@ public class Funcoes {
                     System.out.print("Informe o nome do candidato: ");
                     String nome = sc.nextLine();
 
-                    System.out.print("Informe o partido: ");
+                    System.out.print("Informe o número partido: ");
                     int partido = sc.nextInt();
                     sc.nextLine();
+                    while (partido == 0) {
+                        System.out.println("Opção de partido inválida!");
+                        System.out.print("Informe o número do partido: ");
+                        partido = sc.nextInt();
+                    }
                     System.out.println();
                     candidato[i] = new Candidatos(nome, partido);
                     System.out.println("--------------\n");
