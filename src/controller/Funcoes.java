@@ -89,7 +89,6 @@ public class Funcoes {
             case 4:
                 System.out.println("---- Atualizar Votação ----\n");
 
-                Candidatos nulo = new Candidatos();
                 for (int i = 0; i < eleitores.length; i++) {
                     for (int j = 0; j < candidatos.length; j++) {
                         if (candidato[j].getPartido() == eleitores[i].getVoto()) {
