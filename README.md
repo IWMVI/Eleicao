@@ -17,7 +17,7 @@ O sistema oferece as seguintes funcionalidades:
 1. Clone o repositório para o seu ambiente local:
 
 ```bash
-git clone https://github.com/seu-usuario/sistema-votacao.git
+git clone https://github.com/IWMVI/Eleicao
 ```
 
 2. Abra o projeto em uma IDE Java de sua preferência.
